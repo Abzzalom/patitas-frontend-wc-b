@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Patitas - Adopta una mascota</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f5f5dc; /* Fondo beige natural */
+      color: #2f4f4f; /* Texto gris oscuro */
+    }
+
+    h1 {
+      color: #8b4513; /* Marrón oscuro para los títulos */
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      margin-top: 50px;
+      max-width: 600px;
+    }
+
+    .alert-success {
+      background-color: #6b8e23; /* Verde oliva suave para la alerta de éxito */
+      color: white;
+      border-radius: 5px;
+      border: 1px solid #556b2f; /* Borde verde oliva */
+    }
+
+    .list-group-item {
+      background-color: #f5f5dc; /* Fondo beige */
+      border: 1px solid #8b4513; /* Bordes marrones */
+      color: #2f4f4f; /* Texto gris oscuro */
+      transition: background-color 0.3s ease;
+    }
+
+    .list-group-item:hover, .list-group-item.active {
+      background-color: #6b8e23; /* Verde oliva al hacer hover o estar activo */
+      color: white;
+    }
+
+    .list-group-item.active {
+      border-color: #556b2f;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="mt-5 mb-4">
+    <h1>Home</h1>
+  </div>
+
+  <div class="alert alert-success" role="success" th:if="${loginModel.codigo == '00'}">
+    Bienvenido <span th:text="${loginModel.nombreUsuario}"></span>
+  </div>
+
+  <div class="mb-3">
+    <div class="list-group list-group-horizontal">
+
+      <a href="#" class="list-group-item list-group-item-action active">Home</a>
+      <a href="#" class="list-group-item list-group-item-action">Ver mascotas</a>
+      <a href="#" class="list-group-item list-group-item-action">Hacer donación</a>
+      <a href="#" class="list-group-item list-group-item-action">Cerrar sesión</a>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+
+</html>
